@@ -1,30 +1,26 @@
+import animals.Cat;
+import kitchen.Plate;
+
 public class DemoAnimals {
     public static void main(String[] args) {
-        Cat cat1 = new Cat("cat1");
-        System.out.println(cat1);
-        System.out.println(cat1.run(150));
-        System.out.println(cat1.swim(0));
-        System.out.println(cat1.jump(2));
+        Cat[] cats = {new Cat("cat1", 150, 2, 10),
+                      new Cat("cat2", 150, 2, 7),
+                      new Cat("cat3", 150, 2, 8)};
+
+        Plate plate1 = new Plate();
+        plate1.addFood(20);
+        System.out.println(plate1);
         System.out.println();
 
-        Dog dog1 = new Dog("dog1");
-        System.out.println(dog1);
-        System.out.println(dog1.run(600));
-        System.out.println(dog1.swim(9));
-        System.out.println(dog1.jump(0.4));
+        for (int i = 0; i < cats.length; i++) {
+            cats[i].eatFood(plate1);
+        }
+
+        for (int i = 0; i < cats.length; i++) {
+            System.out.println(cats[i]);
+        }
         System.out.println();
 
-        Dog dog2 = new Dog("dog2", 600, 5, 0.2);
-        System.out.println(dog2);
-        System.out.println(dog2.run(600));
-        System.out.println(dog2.swim(9));
-        System.out.println(dog2.jump(0.4));
-
-        Dog dog3 = new Dog("dog3", 400, 5, 0.2);
-        System.out.println(dog3);
-        System.out.println(dog3.run(600));
-        System.out.println(dog3.swim(9));
-        System.out.println(dog3.jump(0.4));
-
+        System.out.println(plate1);
     }
 }
